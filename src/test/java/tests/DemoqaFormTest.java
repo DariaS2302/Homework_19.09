@@ -27,6 +27,7 @@ public class DemoqaFormTest extends TestBase {
     @Test
     void fullFormTest() {
         demoqaFormPage.openPage()
+                .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(userEmail)
@@ -57,6 +58,7 @@ public class DemoqaFormTest extends TestBase {
     @Test
     void minFormTest() {
         demoqaFormPage.openPage()
+                .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(userEmail)
@@ -73,6 +75,7 @@ public class DemoqaFormTest extends TestBase {
     @Test
     void NegativeFormTest() {
         demoqaFormPage.openPage()
+                .removeBanner()
                 .setUserNumber(negativeUserNumber)
                 .clickSubmit();
 

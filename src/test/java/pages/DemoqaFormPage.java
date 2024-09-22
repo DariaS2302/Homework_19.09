@@ -5,7 +5,7 @@ import pages.components.CalendarComponent;
 import pages.components.TableResponsive;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DemoqaFormPage {
@@ -26,11 +26,14 @@ public class DemoqaFormPage {
             submitInput = $("#submit");
 
 
-CalendarComponent calendarComponent = new CalendarComponent();
-
-
     public DemoqaFormPage openPage() {
         open("/automation-practice-form");
+        return this;
+    }
+
+    public DemoqaFormPage removeBanner() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
